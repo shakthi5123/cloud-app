@@ -16,7 +16,7 @@ dotenv.config()
 // Any environment variable used by the application should be exposed through this object.
 
 export const env = {
-   PORT: Number(process.env.PORT) || 5000,
+   PORT: Number(process.env.PORT) || 5001,
    NODE_ENV: process.env.NODE_ENV || "development",
 }
 
