@@ -12,6 +12,9 @@ import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
 
+// local imports
+import projectRouter from "./modules/projects/project.routes"
+
 
 const app = express()
 
@@ -25,6 +28,7 @@ app.use(helmet())
 // logs every HTTP requests
 app.use(morgan("dev"))
 
+
 // health check route verify the api is running 
 app.get("/", (_req, res) => {
    res.json({
@@ -33,6 +37,10 @@ app.get("/", (_req, res) => {
       data: null
    })
 })
+
+// feature routes
+app.use("/api/v1/projects", projectRouter)
+
 
 export default app;
 
